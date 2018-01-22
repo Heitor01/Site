@@ -1,6 +1,7 @@
 import React from 'react';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Paper from 'material-ui/Paper';
+import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import Drawer from 'material-ui/Drawer';
 
@@ -14,15 +15,24 @@ const style = {
   display: 'flex',
 };
 const avatar = {
-  width: 80,
   height: 80,
+  width: 80,
+  marginTop: '50%',
+  marginLeft: '5%',
+};
+const email = {
+  marginLeft: '37%',
+  color: 'white',
+  marginTop: '-10%',
+  fontFamily: 'monospace',
+  fontSize:13,
 };
 
 class CustomDrawer extends React.Component {
   constructor(props) {
     super(props);
     console.log(this);
-    this.state = { open: false };
+    this.state = { open: true };
   }
 
   handleToggle = () => this.setState({ open: !this.state.open });
@@ -36,8 +46,10 @@ class CustomDrawer extends React.Component {
           <div tabIndex={0} role="button" onClick={this.handleClose} onKeyDown={this.handleClose} >
             <Paper style={style}>
               <Avatar src={img} style={avatar} />
-              <p>jessica@uproc.com.br</p>
             </Paper>
+            <Typography type="body1" style={email}>
+              jessica@uproc.com.br
+            </Typography>
             <List>
               <ListItem button>
                 <i className="material-icons">system_update_alt</i>
