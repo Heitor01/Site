@@ -8,7 +8,6 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
-import Button from 'material-ui/Button';
 
 import Login from './Login';
 import Order from './Order';
@@ -33,6 +32,9 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  tabs: {
+    width: '100%',
+  },
 };
 
 const App = (props) => {
@@ -49,7 +51,6 @@ const App = (props) => {
           <Typography type="title" color="inherit" className={classes.flex}>
             Title
           </Typography>
-          <Button color="contrast">Login</Button>
         </Toolbar>
       </AppBar>
       <CustomDrawer ref={(ref) => { open_drawer = ref; }} />

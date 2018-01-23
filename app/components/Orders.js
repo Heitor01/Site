@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
 import Paper from 'material-ui/Paper';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from 'material-ui-icons/Menu';
+import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 
@@ -16,17 +20,28 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit * -1,
     marginRight: theme.spacing.unit * -1,
   },
+  appbar: {
+    flexWrap: 'wrap',
+  },
 });
 
 function Orders(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar className={classes.root}>
-        <Tabs>
-          <Tab label="Importar" />
-          <Tab label="Editar" />
-          <Tab label="Imprimir" />
+      <AppBar position="fixed" className={classes.appbar}>
+        <Toolbar>
+          <IconButton color="contrast" aria-label="Menu" className={classes.menuButton}>
+            <MenuIcon />
+          </IconButton>
+          <Typography type="title" color="inherit" className={classes.flex}>
+            Pedidos
+          </Typography>
+        </Toolbar>
+        <Tabs className={classes.tabs}>
+          <Tab label="importar" />
+          <Tab label="editar" />
+          <Tab label="imprimir" />
         </Tabs>
       </AppBar>
       <Paper className={classes.paper}>

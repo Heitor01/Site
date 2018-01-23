@@ -25,14 +25,14 @@ const email = {
   color: 'white',
   marginTop: '-10%',
   fontFamily: 'monospace',
-  fontSize:13,
+  fontSize: 13,
 };
 
 class CustomDrawer extends React.Component {
   constructor(props) {
     super(props);
     console.log(this);
-    this.state = { open: true };
+    this.state = { open: false };
   }
 
   handleToggle = () => this.setState({ open: !this.state.open });
