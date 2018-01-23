@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import Tabs, { Tab } from 'material-ui/Tabs';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 
@@ -52,6 +53,11 @@ const App = (props) => {
             Title
           </Typography>
         </Toolbar>
+		<Tabs className={classes.tabs}>
+          <Tab label="importar" />
+          <Tab label="editar" />
+          <Tab label="imprimir" />
+        </Tabs>
       </AppBar>
       <CustomDrawer ref={(ref) => { open_drawer = ref; }} />
 
